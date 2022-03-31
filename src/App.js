@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Component } from "react";
+import { Cardlist } from "./components/card/card.component";
+import { Searchbox } from "./components/Searchcomponent/search.Component";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: [],
+      searchField: "",
+    };
+  }
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((result) => {
+        return result.json();
+      })
+      .then((data) => {
+        this.setState({ users: data });
+      });
+  }
+
+  render() {
+    let { searchField, users } = this.state;
+    let filteredList = users.filter((user) => {
+      return user.name.toLowerCase().includes(searchField.toLocaleLowerCase());
+    });
+    return (
+      <div className="App">
+        <Searchbox placeholder="Search Users" handleChange={(event) => {this.setState({ searchField: event.target.value })}} />
+        <h2>Random users</h2>
+        <Cardlist users={filteredList} />
+      </div>
+    );
+  }
 }
-
 export default App;

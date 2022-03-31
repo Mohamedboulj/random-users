@@ -1,5 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Slackey&display=swap");
+
 .App {
   text-align: center;
+  background-image: linear-gradient(
+    40deg,
+    hsl(240deg 100% 20%) 0%,
+    hsl(289deg 100% 21%) 8%,
+    hsl(315deg 100% 27%) 18%,
+    hsl(329deg 100% 36%) 32%,
+    hsl(337deg 100% 43%) 58%,
+    hsl(357deg 91% 59%) 76%,
+    hsl(17deg 100% 59%) 85%,
+    hsl(34deg 100% 53%) 91%,
+    hsl(45deg 100% 50%) 96%,
+    hsl(55deg 100% 50%) 100%
+  );
 }
 
 .App-logo {
@@ -35,4 +50,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+h2 {
+  font-family: "Slackey", cursive;
+  letter-spacing: 1px;
+  font-size: 48px;
+  color: aliceblue;
+}
+h2:hover{
+  letter-spacing: 5px;
 }

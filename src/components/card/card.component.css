@@ -1,0 +1,8 @@
+ul{
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 14px;
+    grid-row-gap: 14px;
+    }
