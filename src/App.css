@@ -2,7 +2,7 @@
 
 .App {
   text-align: center;
-  background-image: linear-gradient(
+  background: linear-gradient(
     40deg,
     hsl(240deg 100% 20%) 0%,
     hsl(289deg 100% 21%) 8%,
